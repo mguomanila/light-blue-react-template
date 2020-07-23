@@ -2,7 +2,9 @@ import {
      LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS,
 } from '../actions/user';
 
+
 const authenticated = localStorage.getItem('authenticated');
+
 export default function auth(state = {
     isFetching: false,
     isAuthenticated: authenticated,
