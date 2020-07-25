@@ -38,14 +38,15 @@ class App extends React.PureComponent {
           <Switch>
             <Route exact path="/" 
               render={() => <Redirect to="/app/main"/>}/>
-            <Route path="/app" exact render={() => <Redirect to="/app/main"/>}/>
-              <PrivateRoute path="/app" 
-                dispatch={this.props.dispatch} component={LayoutComponent}/>
-                <Route path="/register" exact component={Register}/>
-              <Route exact path="/login" 
-                component={Login}/>
-              <Route exact path="/error"
-                component={ErrorPage}/>
+            <Route exact path="/app" render={() => <Redirect to="/app/main"/>}/>
+            <PrivateRoute path="/app" 
+              dispatch={this.props.dispatch} component={LayoutComponent}/>
+            <Route exact path="/register" 
+              component={Register}/>
+            <Route exact path="/login" 
+              component={Login}/>
+            <Route exact path="/error"
+              component={ErrorPage}/>
             <Route component={ErrorPage}/>
             <Redirect from="*" to="/app/main/dashboard"/>
           </Switch>
