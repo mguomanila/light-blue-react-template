@@ -57,7 +57,6 @@ class Login extends React.Component {
         <Redirect to={from} />
       );
     }
-
     return (
       <div className="auth-page">
         <Container>
@@ -137,7 +136,7 @@ class Login extends React.Component {
           </Widget>
         </Container>
         <footer className="auth-footer">
-          2020 &copy; Light Blue Template - React Admin Dashboard Template.
+          {new Date().getFullYear()} &copy; Light Blue Template - React Admin Dashboard Template.
         </footer>
       </div>
     );
