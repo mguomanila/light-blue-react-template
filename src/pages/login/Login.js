@@ -57,6 +57,7 @@ class Login extends React.Component {
         <Redirect to={from} />
       );
     }
+
     return (
       <div className="auth-page">
         <Container>
