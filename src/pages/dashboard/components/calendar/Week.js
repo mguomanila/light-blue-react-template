@@ -45,12 +45,12 @@ class Week extends Component {
       };
       
       days.push(<Day 
-        key={uuid()}
-        day={day} 
-        selected={selected} 
-        />);
-        date = date.clone();
-        date.add(1, "d");
+              key={uuid()}
+              day={day} 
+              selected={selected} 
+            />);
+      date = date.clone();
+      date.add(1, "d");
     }
     return (
       <div className={`${s.calendarRow} ${s.week}`}>
