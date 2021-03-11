@@ -33,7 +33,8 @@
   &.input-transparent {
     border: none;
     color: $text-color;
-    background-color: $widget-bg-color;
+    background-color: #12142B;
+    opacity: .8;
 
     @include placeholder(rgba(#eee, 0.76));
 
@@ -351,7 +352,4 @@ table > thead > tr > th {
   background-color: $bg-addition !important;
 }
 
-.settings-nav-item {
-
-}
 

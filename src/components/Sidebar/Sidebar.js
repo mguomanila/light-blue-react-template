@@ -10,6 +10,13 @@ import LinksGroup from './LinksGroup';
 
 import {changeActiveSidebarItem} from '../../actions/navigation';
 import {logoutUser} from '../../actions/user';
+import HomeIcon from '../Icons/SidebarIcons/HomeIcon';
+import TypographyIcon from '../Icons/SidebarIcons/TypographyIcon';
+import TablesIcon from '../Icons/SidebarIcons/TablesIcon';
+import NotificationsIcon from '../Icons/SidebarIcons/NotificationsIcon';
+import ComponentsIcon from '../Icons/SidebarIcons/ComponentsIcon';
+
+
 
 class Sidebar extends React.Component {
     static propTypes = {
@@ -80,7 +87,7 @@ class Sidebar extends React.Component {
                         activeItem={this.props.activeItem}
                         header="Dashboard"
                         isHeader
-                        iconName="flaticon-home"
+                        iconName={<HomeIcon className={s.menuIcon} />}
                         link="/app/main"
                         index="main"
                     />
@@ -90,7 +97,7 @@ class Sidebar extends React.Component {
                         activeItem={this.props.activeItem}
                         header="Typography"
                         isHeader
-                        iconName="flaticon-network"
+                        iconName={<TypographyIcon className={s.menuIcon} />}
                         link="/app/typography"
                         index="core"
                     />
@@ -99,7 +106,7 @@ class Sidebar extends React.Component {
                         activeItem={this.props.activeItem}
                         header="Tables Basic"
                         isHeader
-                        iconName="flaticon-map-location"
+                        iconName={<TablesIcon className={s.menuIcon} />}
                         link="/app/tables"
                         index="tables"
                     />
@@ -108,7 +115,7 @@ class Sidebar extends React.Component {
                         activeItem={this.props.activeItem}
                         header="Notifications"
                         isHeader
-                        iconName="flaticon-layers"
+                        iconName={<NotificationsIcon className={s.menuIcon}/>}
                         link="/app/notifications"
                         index="ui"
                     />
@@ -117,18 +124,18 @@ class Sidebar extends React.Component {
                         activeItem={this.props.activeItem}
                         header="Components"
                         isHeader
-                        iconName="flaticon-list"
-                        link="/app/forms"
-                        index="forms"
+                        iconName={<ComponentsIcon className={s.menuIcon}/>}
+                        link="/app/components"
+                        index="components"
                         childrenLinks={[
                             {
-                                header: 'Charts', link: '/app/charts',
+                                header: 'Charts', link: '/app/components/charts',
                             },
                             {
-                                header: 'Icons', link: '/app/icons',
+                                header: 'Icons', link: '/app/components/icons',
                             },
                             {
-                                header: 'Maps', link: '/app/maps',
+                                header: 'Maps', link: '/app/components/maps',
                             },
                         ]}
                     />
@@ -136,9 +143,6 @@ class Sidebar extends React.Component {
                 <h5 className={s.navTitle}>
                     LABELS
                     {/* eslint-disable-next-line */}
-                    <a className={s.actionLink}>
-                        <i className={`${s.glyphiconSm} glyphicon glyphicon-plus float-right`}/>
-                    </a>
                 </h5>
                 {/* eslint-disable */}
                 <ul className={s.sidebarLabels}>
@@ -169,16 +173,17 @@ class Sidebar extends React.Component {
                     {this.props.alertsList.map(alert => // eslint-disable-line
                         <Alert
                             key={alert.id}
-                            className={s.sidebarAlert} color="transparent"
+                            className={s.sidebarAlert} 
+                            color="transparent"
                             isOpen={true} // eslint-disable-line
                             toggle={() => {
                                 this.dismissAlert(alert.id);
                             }}
                         >
                             <span>{alert.title}</span><br/>
-                            <Progress className={`bg-custom-dark progress-xs mt-1`} color={alert.color}
+                            <Progress className={`bg-subtle-blue progress-xs mt-1`} color={alert.color}
                                       value={alert.value}/>
-                            <small>{alert.footer}</small>
+                            <span className={s.alertFooter}>{alert.footer}</span>
                         </Alert>,
                     )}
                 </div>

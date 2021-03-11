@@ -4,11 +4,11 @@ import {
   ListGroupItem,
 } from 'reactstrap';
 
-import a1 from '../../../images/people/a1.jpg';
-import a2 from '../../../images/people/a2.jpg';
-import a4 from '../../../images/people/a4.jpg';
-import a6 from '../../../images/people/a6.jpg';
-import avatar from '../../../images/avatar.png';
+import a1 from '../../../assets/people/a1.jpg';
+import a2 from '../../../assets/people/a2.jpg';
+import a4 from '../../../assets/people/a4.jpg';
+import a6 from '../../../assets/people/a6.jpg';
+import avatar from '../../../assets/avatar.png';
 
 import s from './ListGroup.module.scss'; // eslint-disable-line
 
@@ -16,7 +16,7 @@ class MessagesDemo extends React.Component {
   render() {
     return (
       <ListGroup className={[s.listGroup, 'thin-scroll'].join(' ')}>
-        <ListGroupItem className={[s.listGroupItem, 'bg-warning-light'].join(' ')}>
+        <ListGroupItem className={[s.listGroupItem].join(' ')}>
           <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
             <img className="rounded-circle" src={a2} alt="..." />
             <i className="status status-bottom bg-success" />
@@ -55,7 +55,7 @@ class MessagesDemo extends React.Component {
         <ListGroupItem className={s.listGroupItem}>
           <span className={[s.notificationIcon, 'thumb-sm'].join(' ')}>
             <img className="rounded-circle" src={a4} alt="..." />
-            <i className="status status-bottom bg-gray-light" />
+            <i className="status status-bottom bg-primary" />
           </span>
           <time className="text-link help float-right">Yesterday</time>
           <h6 className="m-0 mb-1">Mike Lewis</h6>

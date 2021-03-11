@@ -53,11 +53,12 @@
   margin: 20px 0 55px;
   font-size: 18px;
   width: 100%;
-  font-weight: $font-weight-thin;
+  font-weight: $font-weight-normal;
   text-align: center;
+  text-transform: uppercase;
 
   a {
-    color: $logo-color;
+    color: $icon-color;
     padding: 0 5px;
     text-decoration: none;
     white-space: nowrap;
@@ -81,11 +82,23 @@
   padding-bottom: 10px;
   overflow-y: auto;
   overflow-x: hidden;
+
+  li > a > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  } 
+
 }
 
 .navTitle {
-  margin: 35px 0 5px 20px;
-  font-size: $font-size-larger;
+  margin: 25px 0 5px 20px;
+  font-size: 13px;
+  font-weight: $font-weight-bold;
+  color: #A5A7B850;
   transition: opacity $sidebar-transition-time ease-in-out;
 
   @media (min-width: breakpoint-min(lg)) {
@@ -110,6 +123,10 @@
 }
 
 .labelName {
+  font-size: 1rem;
+  margin-left: 10px;
+  font-weight: $font-weight-thin;
+  color: $main-gray;
   opacity: 1;
   transition: opacity $sidebar-transition-time ease-in-out;
 }
@@ -129,11 +146,11 @@
 
 .sidebarLabels {
   list-style-type: none;
-  padding: 11px 20px;
+  padding: 15px 20px;
   padding-right: 15px;
 
   > li + li {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   li > a {
@@ -142,8 +159,8 @@
     text-decoration: none;
 
     > i {
-      font-size: 11px;
-      vertical-align: 1px;
+      font-size: 6px;
+      vertical-align: 2px;
       transition: margin-left $sidebar-transition-time ease-in-out;
     }
   }
@@ -164,6 +181,7 @@
 }
 
 .sidebarAlerts {
+  margin-top: 15px;
   margin-bottom: $spacer * 2;
   transition: opacity $sidebar-transition-time ease-in-out;
   opacity: 1;
@@ -179,12 +197,29 @@
 }
 
 .sidebarAlert {
+  font-size: $font-size-mini;
+  font-weight: $font-weight-normal;
   background: transparent;
+  color: $main-gray;
   margin-bottom: 0;
-  padding: 0.5rem 11px 0.5rem 20px !important;
+  margin-right: 2px;
+  padding: 0.5rem 11px 0.5rem 10px !important;
   padding-right: 15px;
+  
+  button > span {
+    color: $icon-color;
+    font-weight: $font-weight-normal;
+  }
+
+  .alertFooter {
+    color: #A5A7B850;
+  }
 }
 
 .groupTitle {
   margin-bottom: 15px;
+}
+
+.menuIcon {
+  fill: $icon-color;
 }
